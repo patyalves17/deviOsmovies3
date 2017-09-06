@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QKj-fk-xKu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zko-Yi-XiN">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies Table View Controller-->
+        <!--Filmes-->
         <scene sceneID="RiK-fo-TSE">
             <objects>
                 <tableViewController id="QKj-fk-xKu" customClass="MoviesTableViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bpd-Dh-Xcq" id="flv-Eo-XTW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LdD-ds-CyX">
@@ -88,10 +88,11 @@
                             <outlet property="delegate" destination="QKj-fk-xKu" id="Egz-9F-5W7"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Filmes" image="movies" id="hIO-uY-drl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4r-kw-aik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="504" y="-120"/>
+            <point key="canvasLocation" x="1448" y="-505"/>
         </scene>
         <!--Movie View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -157,7 +158,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxK-ZM-7IG" userLabel="ViewSinopse">
-                                <rect key="frame" x="0.0" y="325.5" width="320" height="242.5"/>
+                                <rect key="frame" x="0.0" y="325.5" width="320" height="193.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinopse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqr-Vo-k6i">
                                         <rect key="frame" x="16" y="9" width="288" height="21"/>
@@ -173,7 +174,7 @@
                                         </variation>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="azx-6d-eB6">
-                                        <rect key="frame" x="12" y="30" width="296" height="192.5"/>
+                                        <rect key="frame" x="12" y="30" width="296" height="143.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -249,11 +250,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="-120"/>
+            <point key="canvasLocation" x="2186" y="-505"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nFa-Ij-cSP">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zko-Yi-XiN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="C4A-r2-ma7">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QKj-fk-xKu" kind="relationship" relationship="viewControllers" id="FKf-GI-dKj"/>
+                        <segue destination="Wd5-JS-xDj" kind="relationship" relationship="viewControllers" id="erE-MH-2sJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dQ-I8-Bx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="-193"/>
+        </scene>
+        <!--Cinemas-->
+        <scene sceneID="WQm-q7-sov">
+            <objects>
+                <viewController id="Wd5-JS-xDj" customClass="TheaterMapViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b6w-sN-hPt"/>
+                        <viewControllerLayoutGuide type="bottom" id="LHl-js-haG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jdc-bb-JFb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Pesquisar pontos de interesse" translatesAutoresizingMaskIntoConstraints="NO" id="mpB-6i-zso">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fJs-9j-gmr">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mpB-6i-zso" firstAttribute="top" secondItem="b6w-sN-hPt" secondAttribute="bottom" id="Dda-Hs-75I"/>
+                            <constraint firstAttribute="trailing" secondItem="mpB-6i-zso" secondAttribute="trailing" id="HVL-gl-ByV"/>
+                            <constraint firstItem="LHl-js-haG" firstAttribute="top" secondItem="fJs-9j-gmr" secondAttribute="bottom" id="OqQ-kB-3f6"/>
+                            <constraint firstItem="fJs-9j-gmr" firstAttribute="top" secondItem="mpB-6i-zso" secondAttribute="bottom" id="UTN-7M-lgn"/>
+                            <constraint firstItem="mpB-6i-zso" firstAttribute="leading" secondItem="Jdc-bb-JFb" secondAttribute="leading" id="k6r-zD-Xk3"/>
+                            <constraint firstAttribute="trailing" secondItem="fJs-9j-gmr" secondAttribute="trailing" id="l1w-d0-4i4"/>
+                            <constraint firstItem="fJs-9j-gmr" firstAttribute="leading" secondItem="Jdc-bb-JFb" secondAttribute="leading" id="wd6-Xs-r4v"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cinemas" image="theaters" id="cKN-Px-uRr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N4d-da-yg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518.75" y="191.19718309859155"/>
         </scene>
     </scenes>
     <resources>
         <image name="gradient" width="320" height="66"/>
+        <image name="movies" width="22" height="22"/>
         <image name="play" width="53" height="53"/>
+        <image name="theaters" width="22" height="22"/>
     </resources>
 </document>
