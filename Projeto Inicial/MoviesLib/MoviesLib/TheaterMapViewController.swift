@@ -32,6 +32,7 @@ class TheaterMapViewController: UIViewController {
             locationManage.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManage.allowsBackgroundLocationUpdates = true
             locationManage.pausesLocationUpdatesAutomatically = true
+            locationManage.pausesLocationUpdatesAutomatically = true
             
             switch CLLocationManager.authorizationStatus() {
                 case .authorizedAlways, .authorizedWhenInUse:
