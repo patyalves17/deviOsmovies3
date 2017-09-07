@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bpd-Dh-Xcq" id="flv-Eo-XTW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="105.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LdD-ds-CyX">
@@ -302,6 +302,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cinemas" image="theaters" id="cKN-Px-uRr"/>
+                    <connections>
+                        <outlet property="mapView" destination="fJs-9j-gmr" id="ELY-I5-q23"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4d-da-yg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
