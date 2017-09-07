@@ -17,9 +17,11 @@ class TheaterMapViewController: UIViewController {
     var theaters: [Theater] = []
 
     override func viewDidLoad() {
+         mapView.delegate = self
         super.viewDidLoad()
         loadXML()
-        print(theaters.count)
+       // print(theaters.count)
+       
     }
     
     func addTheaters(){
@@ -49,6 +51,7 @@ class TheaterMapViewController: UIViewController {
             xmlParser.parse()
         }
     }
+    
 
    
 
@@ -111,3 +114,28 @@ extension TheaterMapViewController: XMLParserDelegate{
     }
     
 }
+
+extension TheaterMapViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView: MKAnnotationView!
+        if annotation is TheaterAnnotation{
+            annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "Theater")
+            
+            if annotationView == nil {
+                annotationView=MKAnnotationView(annotation: annotation, reuseIdentifier: "Theater")
+                annotationView.image = UIImage(named: "theaterIcon")
+                annotationView.canShowCallout = true
+            }else{
+                annotationView.annotation = annotation
+            }
+        }
+        return annotationView
+    }
+
+}
+
+
+
+
+
+
