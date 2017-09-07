@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class TheaterMapViewController: UIViewController {
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var mapView: MKMapView!
     lazy var locationManage = CLLocationManager()
