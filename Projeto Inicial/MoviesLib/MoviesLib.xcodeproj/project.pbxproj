@@ -108,6 +108,7 @@
 			children = (
 				07780D4B1E6D860E00BC3630 /* MoviesLib */,
 				07780D4A1E6D860E00BC3630 /* Products */,
+				ACC511DA1F60D4DE00A92720 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +175,13 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		ACC511DA1F60D4DE00A92720 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +215,14 @@
 					07780D481E6D860E00BC3630 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

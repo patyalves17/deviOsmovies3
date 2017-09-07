@@ -12,6 +12,8 @@ import MapKit
 class TheaterMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    lazy var locationManage = CLLocationManager()
+    
     var currentElement: String!
     var theater: Theater!
     var theaters: [Theater] = []
@@ -22,6 +24,28 @@ class TheaterMapViewController: UIViewController {
         loadXML()
        // print(theaters.count)
        
+    }
+    
+    func requestUserLocationAuthorization(){
+        if CLLocationManager.locationServicesEnabled(){
+            locationManage.delegate = self
+            locationManage.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManage.allowsBackgroundLocationUpdates = true
+            locationManage.pausesLocationUpdatesAutomatically = true
+            
+            switch CLLocationManager.authorizationStatus() {
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("usuário liberou a bagaça")
+                case .denied:
+                    print("usuário negou a bagaça")
+                case .notDetermined:
+                    print("Ainda não foi solicitado o acesso")
+                    locationManage.requestWhenInUseAuthorization()
+                case .restricted:
+                    print("Não tenho acesso ao GPS")
+            
+           }
+        }
     }
     
     func addTheaters(){
@@ -134,6 +158,18 @@ extension TheaterMapViewController: MKMapViewDelegate{
 
 }
 
+extension TheaterMapViewController:CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+        default:
+            break
+        }
+        
+    }
+}
 
 
 
