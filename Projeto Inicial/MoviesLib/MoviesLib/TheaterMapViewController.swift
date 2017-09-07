@@ -169,6 +169,13 @@ extension TheaterMapViewController:CLLocationManagerDelegate{
         }
         
     }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        print(userLocation.location!.speed)
+        
+        let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 100, 100)
+        mapView.setRegion(region, animated: true)
+    }
 }
 
 
